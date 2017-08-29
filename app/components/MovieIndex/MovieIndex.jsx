@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class MovieIndex extends Component {
   constructor() {
@@ -6,10 +6,6 @@ export default class MovieIndex extends Component {
   }
 
   render() {
-    return (
-      <div>
-      MOVIES
-      </div>
-    )
+    return <div>MOVIES</div>;
   }
 }
