@@ -1,19 +1,19 @@
+import React from 'react'
 import { connect } from 'react-redux'
-// import thunk from 'redux-thunk'
 import { getUser } from '../actions/actions.jsx'
 import Login from '../components/Login/Login.jsx'
 
 const mapStateToProps = (state) => {
     console.log('state in mstp ', state);
     
-    return { users: state.loginReducer }
+    return { users: state.users }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleSubmit: (user, password) => {
+        handleSubmit: (newUser) => {
             console.log('in handleSubmit')
-            dispatch(getUser(user, password))
+            dispatch(getUser(newUser))
     }
     }
 }
