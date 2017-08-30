@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Login from "../Login/Login";
+import LoginContainer from "../Login/login.container.jsx";
 import { fetchNowPlaying } from "../../utils/fetchHelper.js"
 
 export default class App extends Component {
@@ -25,7 +25,7 @@ render() {
       <div className="app-container">
         <h1>Movie Tracker</h1>
         { mappedMovies ? mappedMovies : <p> no movies </p> }
-        <Login />
+        <LoginContainer />
       </div>
     );
   }

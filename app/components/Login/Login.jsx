@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { handleSubmit } from '../../container/index.js'
+
 
 
 class Login extends Component {
@@ -9,8 +9,6 @@ class Login extends Component {
 			user: "",
 			password: ""
 		}
-
-		console.log(props);
 	}
 
 	handleInput (type, e) {
@@ -19,13 +17,14 @@ class Login extends Component {
 		})
 	}
 	render() {
+		console.log('props in login ', this.props)
 		// console.log('hs ', handleSubmit);
 		
 		return (
 			<div className="login-div">
 				<input placeholder="Username" className="username-input" onChange={(e) => this.handleInput('user', e)} />
 				<input placeholder="Password" className="password-input" onChange={(e) => this.handleInput('password', e)} />
-				<input type="submit" onChange={() => handleSubmit(this.state.user, this.state.password)} />
+				<input type="submit" onClick={() => this.props.handleSubmit(this.state)} />
 			</div>
 		)
 	}
