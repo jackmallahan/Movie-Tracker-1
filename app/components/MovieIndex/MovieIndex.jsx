@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import key from '../../utils/APIkey.js'
+import MovieCard from '../MovieCard/MovieCard'
 
 export default class MovieIndex extends Component {
 	constructor(props) {
@@ -7,13 +8,21 @@ export default class MovieIndex extends Component {
 	}
 
 	componentDidMount() {
-		console.log('movie props', this.props)
 		this.props.loadNowPlaying(
-			'https://api.themoviedb.org/3/movie/now_playing?api_key=8b8eafe65704813392f88b71fcdd215c&language=en-US&page=1'
+			`https://api.themoviedb.org/3/movie/now_playing?api_key=${key}&language=en-US&page=1`
+			
 		)
 	}
 
 	render() {
-		return <div>MOVIES</div>
+		const mappedMovies = this.props.filmsNowPlaying.map((movie) => {
+			return <MovieCard movie={movie} key={movie.id} /> 
+		})
+
+		return (
+			<div className="movie-list">
+				{ mappedMovies }
+			</div>
+		)
 	}
 }
