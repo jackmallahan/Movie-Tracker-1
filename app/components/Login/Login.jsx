@@ -15,7 +15,6 @@ class Login extends Component {
     });
   }
   render() {
-    console.log("props in login ", this.props);
 
     return (
       <div className="login-div">
