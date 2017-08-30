@@ -1,10 +1,11 @@
-const getMoviesReducer = (state = [], action) => {
-	switch (action.type) {
-		case 'GET_MOVIES':
-			return [...state, action.results]
-		default:
-			return state
-	}
-}
+const filmsNowPlaying = (state = [], action) => {
+  console.log("movie reducer", action);
+  switch (action.type) {
+    case "SAVE_DATA":
+      return [...state, ...action.results];
+    default:
+      return state;
+  }
+};
 
-export default getMoviesReducer
+export default filmsNowPlaying;

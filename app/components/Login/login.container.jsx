@@ -1,24 +1,15 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { getUser } from '../../actions/actions'
-import Login from './Login.jsx'
-import { bindActionCreators } from 'redux'
+import React from "react";
+import { connect } from "react-redux";
+import { getUser } from "../../actions/actions";
+import Login from "./Login.jsx";
+import { bindActionCreators } from "redux";
 
-const mapStateToProps = (state) => {
-    console.log('state in mstp ', state);
-    
-    return { users: state.users }
-}
+const mapStateToProps = state => {
+  return { users: state.users };
+};
 
-const mapDispatchToProps = (dispatch) => {
-    // return {
-    //     handleSubmit: (newUser) => {
-    //         console.log('in handleSubmit')
-    //         dispatch(getUser(newUser))
-    // }
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ handleSubmit: getUser }, dispatch);
+};
 
-    return bindActionCreators({getUser}, dispatch)
-}
-// }
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
