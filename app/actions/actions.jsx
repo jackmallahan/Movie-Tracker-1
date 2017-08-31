@@ -1,7 +1,7 @@
-export const getUser = newUser => {
+export const getUsers = users => {
 	return {
-		type: 'ADD_USER',
-		newUser
+		type: 'GET_USERS',
+		users
 	}
 }
 
@@ -44,7 +44,17 @@ export const postNewUser = user => {
 			}
 		})
 			.then(data => data.json())
-			.then(parsedData => dispatch(addUser(parsedData)))
+			.then(parsedData => {
+				console.log(parsedData), dispatch(register(parsedData))
+			})
 			.catch(e => console.log(e))
+	}
+}
+
+export const retrieveUsers = users => {
+	return dispatch => {
+		fetch('/api/users')
+			.then(data => data.json())
+			.then(data => dispatch(getUsers(data.data)))
 	}
 }

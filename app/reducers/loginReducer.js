@@ -1,12 +1,11 @@
-const login = (state = {}, action) => {
-  switch (action.type) {
-    case "LOGIN":
-      return Object.assign(state, {
-        email: action.user.user,
-        password: action.user.password
-      });
+const login = (state = [], action) => {
+  console.log(action);
+	switch (action.type) {
+		case 'GET_USERS':
+			return [...action.users]
+		default:
+			return state
+	}
+}
 
-    default:
-      return state;
-  }
-};
+export defualt login
