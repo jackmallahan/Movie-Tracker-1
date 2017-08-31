@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import LoginContainer from "../Login/Login.Container.jsx";
 import MovieIndexContainer from "../MovieIndex/MovieIndexContainer.jsx";
+import RegisterContainer from "../Register/RegisterContainer.jsx";
 import { getNowPlaying } from "../../actions/actions";
 import { Route, NavLink, Link } from "react-router-dom";
 
@@ -19,10 +20,14 @@ export default class App extends Component {
           <NavLink to="/" className="movies-link">
             Movies
           </NavLink>
+          <NavLink to="/register" className="register-link">
+            Register
+          </NavLink>
         </header>
         <h1>Movie Tracker</h1>
         <Route exact path="/" component={MovieIndexContainer} />
         <Route exact path="/login" component={LoginContainer} />
+        <Route exact path="/register" component={RegisterContainer} />
       </div>
     );
   }
