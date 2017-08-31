@@ -34,6 +34,14 @@ export const getNowPlaying = url => {
 	}
 }
 
+export const checkUser = user => {
+	// if (check store against user email and password) {
+	// 	//if true then allow login
+	// } else {
+	// 	//dont allow login
+	// }
+}
+
 export const postNewUser = user => {
 	return dispatch => {
 		fetch('/api/users/new', {
@@ -43,11 +51,13 @@ export const postNewUser = user => {
 				'Content-Type': 'application/json'
 			}
 		})
-			.then(data => data.json())
-			.then(parsedData => {
-				console.log(parsedData), dispatch(register(parsedData))
+			.then(data => {
+				data.ok ? data.json() : alert('User Already Exists')
 			})
-			.catch(e => console.log(e))
+			.then(parsedData => {
+				dispatch(register(parsedData))
+			})
+			.catch(err => console.log('in catch ', err))
 	}
 }
 

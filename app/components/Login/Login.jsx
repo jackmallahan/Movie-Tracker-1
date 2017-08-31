@@ -13,7 +13,11 @@ class Login extends Component {
 		this.setState({
 			[type]: input
 		})
-	}
+  }
+  
+  componentDidMount() {
+    this.props.loadUsers();
+  }
 
 	render() {
 		return (

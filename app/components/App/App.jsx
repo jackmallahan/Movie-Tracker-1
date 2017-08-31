@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import LoginContainer from '../Login/Login.Container.jsx'
+import LoginContainer from '../Login/loginContainer.jsx'
 import MovieIndexContainer from '../MovieIndex/MovieIndexContainer.jsx'
 import RegisterContainer from '../Register/RegisterContainer.jsx'
 import { getNowPlaying } from '../../actions/actions'

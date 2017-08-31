@@ -1,5 +1,4 @@
 const login = (state = [], action) => {
-  console.log(action);
 	switch (action.type) {
 		case 'GET_USERS':
 			return [...action.users]
@@ -8,4 +7,4 @@ const login = (state = [], action) => {
 	}
 }
 
-export defualt login
+export default login
