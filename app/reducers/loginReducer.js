@@ -1,10 +1,10 @@
 const login = (state = [], action) => {
-	switch (action.type) {
-		case 'GET_USERS':
-			return [...action.users]
-		default:
-			return state
-	}
-}
+  switch (action.type) {
+    case "LOGIN":
+      return action.userInfo;
+    default:
+      return state;
+  }
+};
 
-export default login
+export default login;
