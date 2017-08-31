@@ -4,29 +4,32 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: "",
+      email: "",
       password: ""
     };
   }
-
-  handleInput(type, e) {
+  
+  handleInput(type, input) {
     this.setState({
-      [type]: e.target.value
+      [type]: input
     });
   }
+
+  
   render() {
 
     return (
       <div className="login-div">
         <input
-          placeholder="Username"
-          className="username-input"
-          onChange={e => this.handleInput("user", e)}
+          placeholder="Email"
+          className="email-input"
+          onChange={e => this.handleInput("email", e.target.value.toLowerCase())}
         />
         <input
           placeholder="Password"
+          type="password"
           className="password-input"
-          onChange={e => this.handleInput("password", e)}
+          onChange={e => this.handleInput("password", e.target.value)}
         />
         <input
           type="submit"

@@ -19,3 +19,16 @@ export const getNowPlaying = url => {
 			.then(data => dispatch(saveData(data.results)))
 	}
 }
+
+export const postNewUser = user => {
+	return dispatch => {
+		fetch("http://localhost:3000/user/new", {
+			method: 'POST',
+			body: JSON.stringify(user),
+			header: {
+				'Content-Type': 'application/json'
+			}
+		})
+		.then(res => console.log(res));
+	}
+}
