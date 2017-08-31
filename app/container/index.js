@@ -10,7 +10,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     handleSubmit: newUser => {
-      console.log("in handleSubmit");
       dispatch(getUser(newUser));
     }
   };
