@@ -9,7 +9,13 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ handleSubmit: getUser }, dispatch);
+  // return bindActionCreators({ handleSubmit: getUser,  } dispatch);
+
+  return {
+    handleSubmit: (newUser) => {
+      dispatch(getUser(newUser))
+    }
+  }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
