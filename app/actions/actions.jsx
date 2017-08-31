@@ -19,6 +19,13 @@ export const login = userInfo => {
   };
 };
 
+export const register = userInfo => {
+	return {
+		type: "REGISTER",
+		userInfo
+	};
+};
+
 export const getNowPlaying = url => {
   return dispatch => {
     fetch(url)
@@ -37,7 +44,7 @@ export const postNewUser = user => {
       }
     })
       .then(data => data.json())
-      .then(parsedData => dispatch(getUser(parsedData)))
+      .then(parsedData => dispatch(register(parsedData)))
       .catch(e => console.log(e));
   };
 };

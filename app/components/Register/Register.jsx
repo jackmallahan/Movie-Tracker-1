@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 
-class Login extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: "",
       email: "",
       password: ""
     };
@@ -17,30 +18,33 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="login-div">
+      <div className="register-div">
         <form
           onSubmit={e => {
             e.preventDefault();
             this.props.handleSubmit({
+              name: this.state.name,
               email: this.state.email.toLowerCase(),
               password: this.state.password
             });
           }}
         >
-
+          <input
+            placeholder="Name"
+            className="name-input"
+            onChange={e => this.handleInput("name", e.target.value)}
+          />
           <input
             placeholder="Email"
             className="email-input"
             onChange={e => this.handleInput("email", e.target.value)}
           />
-
           <input
             placeholder="Password"
             type="password"
             className="password-input"
             onChange={e => this.handleInput("password", e.target.value)}
           />
-
           <input type="submit" />
         </form>
       </div>
@@ -48,4 +52,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Register;
