@@ -1,0 +1,15 @@
+header {
+  background-color: orange;
+  display: flex;
+}
+
+.login-link,
+.movies-link {
+  margin: 10px;
+}
+
+.login-link:hover,
+.movies-link:hover {
+  color: white;
+  cursor: pointer;
+}
