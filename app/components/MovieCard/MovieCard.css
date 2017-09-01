@@ -1,35 +1,35 @@
 .movie-card {
-	border: 2px solid #8bd3e6;
-	border-radius: 15px;
-	box-shadow: 2px 2px 25px #767676;
-	color: white;
-	text-align: center;
-	margin: 10px;
-	height: 250px;
-	width: 30vw;
-	opacity: 1;
-	background-size: cover;
-	background-repeat: no-repeat;
+  border: 2px solid #8bd3e6;
+  border-radius: 15px;
+  box-shadow: 2px 2px 25px #767676;
+  color: white;
+  text-align: center;
+  margin: 10px;
+  height: 250px;
+  width: 30vw;
+  opacity: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .movie-card p {
-	display: none;
+  display: none;
 }
 
 .movie-card:hover {
-	opacity: 0.5;
+  opacity: 0.5;
 }
 
 .movie-card:hover p {
-	display: block;
+  display: block;
 }
 
 h3 {
-	background-color: #ffa500;
-	color: black;
-	font-size: 32px;
+  background-color: #ffa500;
+  color: black;
+  font-size: 32px;
 }
 
 h1 {
-	color: #f1563f;
+  color: #f1563f;
 }
