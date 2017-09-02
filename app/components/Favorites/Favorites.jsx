@@ -1,32 +1,28 @@
 import React, { Component } from 'react'
-import MovieCard from '../MovieCard/MovieCard'
+import MovieCardContainer from '../MovieCard/MovieCardContainer.js'
 
 class Favorites extends Component {
 	constructor(props) {
 		super(props)
-		// this.faves = this.props.faves !== [] ? this.props.faves.map(movie => <div key={movie.id}>{movie.title}</div>) : <div className="favorites-container">Sweet Action</div>
 	}
 
-	componentDidMount() {
+	componentWillMount() {
 		this.props.getAllFavorites(this.props.user.id)
 	}
 
 	render() {
-		console.log('props faves ', this.props.faves);
+		console.log('faaaaves ', this.props.faves);
 		
-		// let mappedFaves;
-		// if (this.faves === []) {
-		// 	mappedFaves = <div className="favorites-container">Sweet Action</div>
-		// } else {
-		// 	mappedFaves = this.faves.map(movie => <div key={movie.id}>{movie.title}</div>)
-		// }
-		
-		// const mappedFaves = this.props.faves ? this.props.faves.map(movie => <div key={movie.id}>{movie.title}</div>) : null
+		let mappedFaves;
 
-		const mappedFaves = this.props.faves.map(movie => <MovieCard key={movie.id} movie={movie} />)
+		if (this.props.faves[0]) {
+			mappedFaves = this.props.faves.map(movie => <MovieCardContainer key={movie.id} movie={movie} />)
+		} else {
+			mappedFaves = <div className="sweet-action">Sweet Action</div>
+		}
 
 		return (
-				<div>
+				<div className="faves-list">
 					{mappedFaves}
 			   	</div>
 		)

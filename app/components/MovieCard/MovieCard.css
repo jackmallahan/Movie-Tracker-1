@@ -18,6 +18,7 @@
 
 .movie-card:hover {
   opacity: 0.5;
+  cursor: pointer;
 }
 
 .movie-card:hover p {
