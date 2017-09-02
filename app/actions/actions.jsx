@@ -40,6 +40,13 @@ export const setFavorites = faves => {
 	}
 }
 
+export const getFromLocal = storedUser => {
+	return {
+		type: 'GET_FROM_LOCAL',
+		storedUser
+	}
+}
+
 export const addFavorite = movie => {
 	return dispatch => {
 		fetch('/api/users/favorites/new', {
@@ -84,7 +91,6 @@ export const signIn = user => {
 				return data.ok ? data.json() : alert('ya dun fuckd up')
 			})
 			.then(data => {
-
 				return dispatch(login(data.data))
 			})
 	}

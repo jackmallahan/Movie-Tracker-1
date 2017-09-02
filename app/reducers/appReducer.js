@@ -1,12 +1,11 @@
-const login = (state = [], action) => {
+const app = (state = null, action) => {
 	switch (action.type) {
-		case 'LOGIN':
-			return action.userInfo
 		case 'GET_FROM_LOCAL':
+			console.log('action', action)
 			return action.storedUser
 		default:
 			return state
 	}
 }
 
-export default login
+export default app
