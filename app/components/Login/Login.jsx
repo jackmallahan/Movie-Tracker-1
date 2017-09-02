@@ -1,4 +1,10 @@
 import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
+import { Redirect } from 'react-router'
+import MovieIndexContainer from '../MovieIndex/MovieIndexContainer.jsx'
+import RegisterContainer from '../Register/RegisterContainer'
+
+
 
 class Login extends Component {
 	constructor(props) {
@@ -15,11 +21,13 @@ class Login extends Component {
 		})
 	}
 
-	componentDidMount() {
-		this.props.loadUsers()
-	}
-
 	render() {
+		
+		if (this.props.currentUser.id) {
+			console.log('you are already logged in')
+			return <Redirect to="/" />
+		}
+
 		return (
 			<div className="login-div">
 				<form
@@ -28,6 +36,10 @@ class Login extends Component {
 						this.props.handleSubmit({
 							email: this.state.email.toLowerCase(),
 							password: this.state.password
+						})
+						this.setState({
+							email: '',
+							password: ''
 						})
 					}}
 				>

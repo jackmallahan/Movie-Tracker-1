@@ -12,6 +12,7 @@ export default class MovieIndex extends Component {
 	}
 
 	render() {
+		
 		const mappedMovies = this.props.filmsNowPlaying.map(movie => {
 			return <MovieCardContainer movie={movie} key={movie.id} />
 		})

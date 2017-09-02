@@ -27,10 +27,16 @@ export const register = userInfo => {
 }
 
 export const favorite = movie => {
-	console.log('in fav action ', movie)
 	return {
 		type: 'ADD_FAVORITE',
 		movie
+	}
+}
+
+export const setFavorites = faves => {
+	return {
+		type: 'SET_FAVES',
+		faves
 	}
 }
 
@@ -45,13 +51,6 @@ export const addFavorite = movie => {
 		})
 			.then(data => data.json())
 			.then(data => dispatch(favorite(data)))
-	}
-}
-
-export const setFavorites = faves => {
-	return {
-		type: 'SET_FAVES',
-		faves
 	}
 }
 
@@ -85,6 +84,7 @@ export const signIn = user => {
 				return data.ok ? data.json() : alert('ya dun fuckd up')
 			})
 			.then(data => {
+
 				return dispatch(login(data.data))
 			})
 	}
@@ -106,13 +106,5 @@ export const postNewUser = user => {
 				dispatch(register(parsedData))
 			})
 			.catch(err => console.log('in catch ', err))
-	}
-}
-
-export const retrieveUsers = users => {
-	return dispatch => {
-		fetch('/api/users')
-			.then(data => data.json())
-			.then(data => dispatch(getUsers(data.data)))
 	}
 }

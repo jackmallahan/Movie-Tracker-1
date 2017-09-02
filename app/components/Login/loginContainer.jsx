@@ -5,7 +5,7 @@ import Login from './Login.jsx'
 import { bindActionCreators } from 'redux'
 
 const mapStateToProps = state => {
-	return { users: state.users }
+	return { currentUser: state.loggedIn }
 }
 
 const mapDispatchToProps = dispatch => {

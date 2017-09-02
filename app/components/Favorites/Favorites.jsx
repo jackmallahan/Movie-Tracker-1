@@ -11,7 +11,6 @@ class Favorites extends Component {
 	}
 
 	render() {
-		console.log('faaaaves ', this.props.faves);
 		
 		let mappedFaves;
 
