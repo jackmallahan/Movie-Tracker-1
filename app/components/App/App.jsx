@@ -4,7 +4,7 @@ import MovieIndexContainer from '../MovieIndex/MovieIndexContainer.jsx'
 import RegisterContainer from '../Register/RegisterContainer.jsx'
 import { getNowPlaying } from '../../actions/actions'
 import { Route, NavLink, Link } from 'react-router-dom'
-import Favorites from '../Favorites/Favorites'
+import favoritesContainer from '../Favorites/favoritesContainer'
 
 export default class App extends Component {
 	constructor() {
@@ -32,7 +32,7 @@ export default class App extends Component {
 				<Route exact path="/" component={MovieIndexContainer} />
 				<Route exact path="/login" component={LoginContainer} />
 				<Route exact path="/register" component={RegisterContainer} />
-				<Route exact path="/favorites" component={Favorites} />
+				<Route exact path="/favorites" component={favoritesContainer} />
 			</div>
 		)
 	}
