@@ -5,7 +5,6 @@ import Favorites from './Favorites.jsx'
 import { bindActionCreators } from 'redux'
 
 const mapStateToProps = state => {
-	console.log('state', state)
 	return { user: state.loggedIn, faves: state.favorites }
 }
 

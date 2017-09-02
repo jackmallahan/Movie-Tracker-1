@@ -27,6 +27,7 @@ export const register = userInfo => {
 }
 
 export const favorite = movie => {
+	console.log('in fav action ', movie)
 	return {
 		type: 'ADD_FAVORITE',
 		movie
@@ -34,7 +35,6 @@ export const favorite = movie => {
 }
 
 export const addFavorite = movie => {
-	console.log(movie)
 	return dispatch => {
 		fetch('/api/users/favorites/new', {
 			method: 'POST',
@@ -49,7 +49,6 @@ export const addFavorite = movie => {
 }
 
 export const setFavorites = faves => {
-	console.log(faves)
 	return {
 		type: 'SET_FAVES',
 		faves

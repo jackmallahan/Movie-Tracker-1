@@ -7,7 +7,7 @@
   }
 }
 
-.favorites-container {
+.sweet-action {
   background-color: red;
   color: purple;
   font-size: 100px;
@@ -17,4 +17,46 @@
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
   -webkit-animation-duration: .25s;
+}
+
+.faves-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 5px;
+  background-color: #53565a;
+  animation: fadeIn ease-in 1;
+  animation-duration: .75s;
+  animation-fill-mode: forwards;
+  -moz-animation: fadeIn ease-in 1;
+  -moz-animation-duration: .75s;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-duration: .75s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

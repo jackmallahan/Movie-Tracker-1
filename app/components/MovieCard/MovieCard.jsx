@@ -22,7 +22,6 @@ const MovieCard = ({ movie, addFavorite, user }) => {
     >
       <h3>
         {title}
-        <button>Favorite</button>
       </h3>
       <p>
         {overview}
