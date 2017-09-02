@@ -6,12 +6,22 @@ header {
 .login-link,
 .movies-link,
 .register-link,
-.favorites-link {
+.favorites-link,
+.logout {
   margin: 10px;
 }
 
+.logout {
+  color: #551a8b;
+  margin-right: 0;
+  text-decoration: underline;
+}
+
 .login-link:hover,
-.movies-link:hover {
+.movies-link:hover,
+.register-link:hover,
+.favorites-link:hover,
+.logout:hover {
   color: white;
   cursor: pointer;
 }
