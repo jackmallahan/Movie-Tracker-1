@@ -47,6 +47,13 @@ export const getFromLocal = storedUser => {
 	}
 }
 
+export const removeFave = faves => {
+	return {
+		type: 'REMOVE_FAVE',
+		faves
+	}
+}
+
 export const addFavorite = movie => {
 	return dispatch => {
 		fetch('/api/users/favorites/new', {
@@ -112,5 +119,19 @@ export const postNewUser = user => {
 				dispatch(register(parsedData))
 			})
 			.catch(err => console.log('in catch ', err))
+	}
+}
+
+export const removeFaves = (faveId, userId) => {
+	return dispatch => {
+		fetch(`/api/users/${userId}/favorites/${faveId}`, {
+			method: 'POST',
+			body: JSON.stringify(faveId, userId),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+			.then(data => data.json())
+			.then(data => console.log('dataaaaaa ', data))
 	}
 }

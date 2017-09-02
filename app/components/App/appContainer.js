@@ -5,7 +5,6 @@ import App from '../App/App.jsx'
 import { bindActionCreators } from 'redux'
 
 const mapStateToProps = state => {
-	console.log('mstp app container', state)
 	return { loggedIn: state.savedUser }
 }
 

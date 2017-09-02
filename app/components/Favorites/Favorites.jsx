@@ -4,10 +4,22 @@ import MovieCardContainer from '../MovieCard/MovieCardContainer.js'
 class Favorites extends Component {
 	constructor(props) {
 		super(props)
+		this.state = {
+			favorites: null
+		}
 	}
 
-	componentWillMount() {
-		this.props.getAllFavorites(this.props.user.id)
+	componentDidMount() {
+		
+		// this.setState({
+		// 	favorites: this.props.favorites
+		// })
+
+		// if (this.props.user.id) {
+		// 	console.log('in if in faves.jsx');
+			
+			this.props.getAllFavorites(this.props.user.id)
+		// }
 	}
 
 	render() {

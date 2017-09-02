@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { retrieveUsers, checkUser, signIn } from '../../actions/actions'
+import { retrieveUsers, signIn } from '../../actions/actions'
 import Login from './Login.jsx'
 import { bindActionCreators } from 'redux'
 

@@ -4,6 +4,8 @@ const favorites = (state = [], action) => {
 			return [...state, ...action.movie]
 		case 'SET_FAVES':
 			return action.faves
+		case 'REMOVE_FAVE':
+			return action.faves
 		default:
 			return state
 	}

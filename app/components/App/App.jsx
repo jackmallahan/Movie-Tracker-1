@@ -11,13 +11,14 @@ export default class App extends Component {
 		super(props)
 	}
 
-	componentDidMount() {
-		let user = JSON.parse(localStorage.getItem('currentUser'))
-		this.props.getFromLocal(user)
-	}
+	// componentDidMount() {
+	// 	if (localStorage.length) {
+	// 		let user = JSON.parse(localStorage.getItem('currentUser'))
+	// 		this.props.getFromLocal(user)
+	// 	}
+	// }
 
 	render() {
-		console.log('props in render', this.props)
 		return (
 			<div className="app-container">
 				<header className="page-header">
