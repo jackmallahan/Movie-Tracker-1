@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import MovieCardContainer from '../MovieCard/MovieCard'
+import MovieCard from '../MovieCard/MovieCard'
 
 class Favorites extends Component {
 	constructor(props) {
 		super(props)
+		// this.faves = this.props.faves !== [] ? this.props.faves.map(movie => <div key={movie.id}>{movie.title}</div>) : <div className="favorites-container">Sweet Action</div>
 	}
 
 	componentDidMount() {
@@ -11,10 +12,24 @@ class Favorites extends Component {
 	}
 
 	render() {
-		const mappedFaves = this.props.faves ? this.props.faves.map(movie => <div>{movie.title}</div>) : null
-		const noFaves = () => <div className="favorites-container">Sweet Action</div>
+		console.log('props faves ', this.props.faves);
+		
+		// let mappedFaves;
+		// if (this.faves === []) {
+		// 	mappedFaves = <div className="favorites-container">Sweet Action</div>
+		// } else {
+		// 	mappedFaves = this.faves.map(movie => <div key={movie.id}>{movie.title}</div>)
+		// }
+		
+		// const mappedFaves = this.props.faves ? this.props.faves.map(movie => <div key={movie.id}>{movie.title}</div>) : null
 
-		return <div>{this.props.faves !== [] ? mappedFaves : noFaves}</div>
+		const mappedFaves = this.props.faves.map(movie => <MovieCard key={movie.id} movie={movie} />)
+
+		return (
+				<div>
+					{mappedFaves}
+			   	</div>
+		)
 	}
 }
 
