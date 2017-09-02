@@ -1,6 +1,6 @@
 header {
-  background-color: orange;
-  display: flex;
+	background-color: orange;
+	display: flex;
 }
 
 .login-link,
@@ -8,13 +8,13 @@ header {
 .register-link,
 .favorites-link,
 .logout {
-  margin: 10px;
+	margin: 10px;
 }
 
 .logout {
-  color: #551a8b;
-  margin-right: 0;
-  text-decoration: underline;
+	color: #551a8b;
+	margin-right: 0;
+	text-decoration: underline;
 }
 
 .login-link:hover,
@@ -22,6 +22,10 @@ header {
 .register-link:hover,
 .favorites-link:hover,
 .logout:hover {
-  color: white;
-  cursor: pointer;
+	color: white;
+	cursor: pointer;
+}
+
+.active {
+	color: red;
 }
