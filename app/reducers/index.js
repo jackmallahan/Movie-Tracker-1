@@ -7,7 +7,8 @@ import filmsNowPlaying from './filmsNowPlaying'
 const rootReducer = combineReducers({
 	users,
 	filmsNowPlaying,
-	loggedIn
+	loggedIn,
+	favorites
 })
 
 export default rootReducer
