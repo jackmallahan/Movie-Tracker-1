@@ -64,7 +64,8 @@ export const addFavorite = movie => {
       }
     })
       .then(data => data.json())
-      .then(data => dispatch(favorite(data)));
+	  .then(data => dispatch(favorite(data)))
+	  .catch(err => alert('Please Sign In To Favorite A Movie'));
   };
 };
 

@@ -31,7 +31,8 @@ const MovieCard = ({
           });
           getAllFavorites(user.id);
         }
-      }}
+      }
+      }
     >
       <h3>
         {title}
