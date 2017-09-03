@@ -1,6 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getNowPlaying, addFavorite, getAllFavorites } from "../../actions/actions.jsx";
+import {
+  getNowPlaying,
+  addFavorite,
+  getAllFavorites,
+  login
+} from "../../actions/actions.jsx";
 import MovieIndex from "./MovieIndex.jsx";
 import { bindActionCreators } from "redux";
 
@@ -13,6 +18,13 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ loadNowPlaying: getNowPlaying, getAllFavorites: getAllFavorites }, dispatch);
+  return bindActionCreators(
+    {
+      loadNowPlaying: getNowPlaying,
+      getAllFavorites: getAllFavorites,
+      login: login
+    },
+    dispatch
+  );
 };
 export default connect(mapStateToProps, mapDispatchToProps)(MovieIndex);

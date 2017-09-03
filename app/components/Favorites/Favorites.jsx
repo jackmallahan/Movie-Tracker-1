@@ -4,23 +4,14 @@ import MovieCardContainer from "../MovieCard/MovieCardContainer.js";
 class Favorites extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      favorites: null
-    };
   }
 
   componentDidMount() {
-    console.log("favorites props", this.props);
-
-    // this.setState({
-    // 	favorites: this.props.favorites
-    // })
-
-    // if (this.props.user.id) {
-    // 	console.log('in if in faves.jsx');
-
-    this.props.getAllFavorites(this.props.user.id);
-    // }
+    let loadedUser = JSON.parse(localStorage.getItem("currentUser"));
+    loadedUser
+      ? this.props.login(loadedUser)
+      : console.log("local storage empty");
+    this.props.getAllFavorites(loadedUser.id);
   }
 
   render() {

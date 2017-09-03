@@ -10,6 +10,7 @@ const MovieCard = ({
 }) => {
   const { title, overview, backdrop_path, poster_path } = movie;
   const photo = backdrop_path ? backdrop_path : poster_path;
+
   return (
     <div
       className="movie-card"
