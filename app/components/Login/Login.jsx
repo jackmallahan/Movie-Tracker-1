@@ -21,7 +21,7 @@ class Login extends Component {
 
   render() {
     if (this.props.currentUser.id) {
-      console.log("you are already logged in");
+      console.log("you are logged in");
       return <Redirect to="/" />;
     }
 

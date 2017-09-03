@@ -1,7 +1,6 @@
-const app = (state = null, action) => {
+const app = (state = [], action) => {
 	switch (action.type) {
 		case 'GET_FROM_LOCAL':
-			console.log('action', action)
 			return action.storedUser
 		default:
 			return state
