@@ -12,7 +12,7 @@ export default class MovieIndex extends Component {
       `https://api.themoviedb.org/3/movie/now_playing?api_key=${key}&language=en-US&page=1`
     );
 
-    this.props.getAllFavorites(this.props.currentUser.id)
+    this.props.getAllFavorites(this.props.currentUser.id);
     // if (this.props.currentUser.id) {
     //   localStorage.setItem(
     //     "currentUser",
