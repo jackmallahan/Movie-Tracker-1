@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router";
 
 class Register extends Component {
   constructor(props) {
@@ -17,7 +18,10 @@ class Register extends Component {
   }
 
   render() {
-    console.log(this.props);
+    if (this.props.users.id) {
+      return <Redirect to="/" />;
+    }
+
     return (
       <div className="register-div">
         <form
@@ -35,6 +39,11 @@ class Register extends Component {
             this.props.signIn({
               email: this.state.email.toLowerCase(),
               password: this.state.password
+            });
+            this.setState({
+              name: "",
+              email: "",
+              password: ""
             });
             this.props.resetFavorites([]);
           }}

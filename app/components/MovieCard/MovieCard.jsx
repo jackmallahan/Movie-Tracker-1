@@ -39,12 +39,8 @@ const MovieCard = ({
         {
           /*favoriteTitles = favorites.map(film => film.title);*/
         }
-
-        {
-          /*if (!favoriteTitles.includes(title) && user.id) {*/
-        }
-        if (card[1] && inFavorites === false && user.id) {
-          console.log("favoriting");
+        
+        if (!favoriteTitles.includes(title) && user.id) {
           addFavorite({
             movie_id: movie.id,
             title: movie.title,
@@ -62,12 +58,8 @@ const MovieCard = ({
         }
       }}
     >
-      <h3>
-        {title}
-      </h3>
-      <p>
-        {overview}
-      </p>
+      <h3>{title}</h3>
+      <p>{overview}</p>
     </div>
   );
 };
