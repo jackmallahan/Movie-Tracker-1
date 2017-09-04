@@ -18,11 +18,15 @@ export default class MovieIndex extends Component {
       ? (loadedUser = JSON.parse(localStorage.getItem("currentUser")))
       : console.log("no stored user");
 
-    loadedUser
-      ? this.props.login(loadedUser)
-      : console.log("local storage empty");
+    if (loadedUser) {
+      this.props.login(loadedUser);
+      return this.props.getAllFavorites(loadedUser.id);
+    }
+    // loadedUser
+    //   ? this.props.login(loadedUser)
+    //   : console.log("local storage empty");
 
-    this.props.getAllFavorites(this.props.currentUser.id);
+    // this.props.getAllFavorites(loadedUser.id);
     if (this.props.currentUser.id) {
       localStorage.setItem(
         "currentUser",
@@ -33,7 +37,9 @@ export default class MovieIndex extends Component {
 
   render() {
     const mappedMovies = this.props.filmsNowPlaying.map(movie => {
-      return <MovieCardContainer movie={movie} key={movie.id} />;
+      return (
+        <MovieCardContainer inFavorites={false} movie={movie} key={movie.id} />
+      );
     });
 
     return (

@@ -6,27 +6,40 @@ const MovieCard = ({
   user,
   favorites,
   getAllFavorites,
-  removeFavorite
+  removeFavorite,
+  inFavorites
 }) => {
   const { title, overview, backdrop_path, poster_path } = movie;
   const photo = backdrop_path ? backdrop_path : poster_path;
-  let favoriteTitles;
+  let favoriteTitles = favorites.map(film => film.title);
 
   return (
     <div
-      className="movie-card"
+      className={
+        favoriteTitles.includes(title)
+          ? "movie-card movie-card-selected"
+          : "movie-card"
+      }
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${photo})`
       }}
       onClick={e => {
+        let card = e.currentTarget.classList;
+
+        if (inFavorites === true && card[1]) {
+          console.log("removing first");
+          removeFavorite(user.id, movie.movie_id);
+          return getAllFavorites(user.id);
+        }
+
         user.id
           ? e.currentTarget.classList.toggle("movie-card-selected")
-          : null;
+          : alert("Please log in to favorite a movie");
 
-        favoriteTitles = favorites.map(film => film.title);
-        if (!user.id) {
-          alert("Please log in to favorite a movie");
+        {
+          /*favoriteTitles = favorites.map(film => film.title);*/
         }
+        
         if (!favoriteTitles.includes(title) && user.id) {
           addFavorite({
             movie_id: movie.id,
@@ -38,9 +51,9 @@ const MovieCard = ({
             overview: movie.overview
           });
           getAllFavorites(user.id);
-        } else if (favoriteTitles.includes(title) && user.id) {
-          console.log("removing favorites");
-          removeFavorite(user.id, movie.movie_id);
+        } else if (!card[1] && inFavorites === false && user.id) {
+          console.log("removing again");
+          removeFavorite(user.id, movie.id);
           getAllFavorites(user.id);
         }
       }}
@@ -52,3 +65,9 @@ const MovieCard = ({
 };
 
 export default MovieCard;
+
+// else if (!card[1] && user.id && inFavorites === true) {
+//           console.log("unfavoriting", movie);
+//           removeFavorite(user.id, movie.id);
+//           getAllFavorites(user.id);
+//         }
