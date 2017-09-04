@@ -28,7 +28,6 @@ const MovieCard = ({
           alert("Please log in to favorite a movie");
         }
         if (!favoriteTitles.includes(title) && user.id) {
-          console.log("adding favorites");
           addFavorite({
             movie_id: movie.id,
             title: movie.title,
@@ -46,12 +45,8 @@ const MovieCard = ({
         }
       }}
     >
-      <h3>
-        {title}
-      </h3>
-      <p>
-        {overview}
-      </p>
+      <h3>{title}</h3>
+      <p>{overview}</p>
     </div>
   );
 };
