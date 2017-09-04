@@ -7,11 +7,16 @@ class Favorites extends Component {
   }
 
   componentDidMount() {
-    let loadedUser = JSON.parse(localStorage.getItem("currentUser"));
-    loadedUser
-      ? this.props.login(loadedUser)
-      : console.log("local storage empty");
-    this.props.getAllFavorites(loadedUser.id);
+    let loadedUser;
+
+    localStorage.getItem("currentUser") !== "undefined" || null
+      ? (loadedUser = JSON.parse(localStorage.getItem("currentUser")))
+      : console.log("no user stored");
+
+    if (loadedUser) {
+      this.props.login(loadedUser);
+      return this.props.getAllFavorites(loadedUser.id);
+    }
   }
 
   render() {
