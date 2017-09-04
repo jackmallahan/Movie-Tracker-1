@@ -53,7 +53,10 @@ class Login extends Component {
             onChange={e => this.handleInput("password", e.target.value)}
           />
 
-          <input type="submit" />
+          <input
+            type="submit"
+            disabled={!this.state.email || !this.state.password ? true : false}
+          />
         </form>
       </div>
     );
