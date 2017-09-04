@@ -47,10 +47,11 @@ export const getFromLocal = storedUser => {
   };
 };
 
-export const removeFave = faves => {
+export const removeFromFavorites = (faveId, userId) => {
   return {
-    type: "REMOVE_FAVE",
-    faves
+    type: "REMOVE_FAVORITE",
+    faveId,
+    userId
   };
 };
 
@@ -113,7 +114,7 @@ export const postNewUser = user => {
       }
     })
       .then(data => {
-        data.ok ? data.json() : alert("User Already Exists");
+        data.ok ? data.json() : alert("That email is taken");
       })
       .then(parsedData => {
         dispatch(register(parsedData));
@@ -122,7 +123,7 @@ export const postNewUser = user => {
   };
 };
 
-export const removeFaves = (faveId, userId) => {
+export const removeFavorite = (faveId, userId) => {
   return dispatch => {
     fetch(`/api/users/${userId}/favorites/${faveId}`, {
       method: "POST",
@@ -131,7 +132,12 @@ export const removeFaves = (faveId, userId) => {
         "Content-Type": "application/json"
       }
     })
-      .then(data => data.json())
-      .then(data => console.log("dataaaaaa ", data));
+      .then(data => {
+        data.json();
+        console.log("fetch data", data);
+      })
+      .then(data => {
+        dispatch(removeFromFavorites(faveId, userId));
+      });
   };
 };
