@@ -73,9 +73,3 @@ const MovieCard = ({
 };
 
 export default MovieCard;
-
-// else if (!card[1] && user.id && inFavorites === true) {
-//           console.log("unfavoriting", movie);
-//           removeFavorite(user.id, movie.id);
-//           getAllFavorites(user.id);
-//         }
