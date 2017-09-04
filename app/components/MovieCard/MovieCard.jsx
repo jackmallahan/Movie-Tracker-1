@@ -10,11 +10,17 @@ const MovieCard = ({
 }) => {
   const { title, overview, backdrop_path, poster_path } = movie;
   const photo = backdrop_path ? backdrop_path : poster_path;
-  let favoriteTitles;
+  let favoriteTitles = favorites.map(film => film.title);
+  console.log("card favorites: ", favorites);
+  console.log("card user: ", user);
 
   return (
     <div
-      className="movie-card"
+      className={
+        favoriteTitles.includes(title)
+          ? "movie-card movie-card-selected"
+          : "movie-card"
+      }
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${photo})`
       }}
