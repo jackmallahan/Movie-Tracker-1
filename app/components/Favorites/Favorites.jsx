@@ -35,7 +35,7 @@ class Favorites extends Component {
 
     if (this.props.faves[0]) {
       mappedFaves = newFaves.map(movie =>
-        <MovieCardContainer key={movie.id} movie={movie} />
+        <MovieCardContainer inFavorites={true} key={movie.id} movie={movie} />
       );
     } else {
       mappedFaves = <div className="sweet-action">Sweet Action</div>;

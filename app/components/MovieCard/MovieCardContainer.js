@@ -9,6 +9,7 @@ import MovieCard from "./MovieCard.jsx";
 import { bindActionCreators } from "redux";
 
 const mapStateToProps = state => {
+  console.log("card state", state);
   return { user: state.loggedIn, favorites: state.favorites };
 };
 
