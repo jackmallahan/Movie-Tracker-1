@@ -34,9 +34,10 @@ class Register extends Component {
               password: this.state.password
             });
 
-            {
-              /* this will sign user in when they hit the register button */
-            }
+//             localStorage.setItem(
+//               "currentUser",
+//               JSON.stringify(this.props.currentUser)
+//             );
 
             this.props.signIn({
               email: this.state.email.toLowerCase(),
@@ -51,6 +52,7 @@ class Register extends Component {
               email: "",
               password: ""
             });
+            this.props.resetFavorites([]);
           }}
         >
           <input

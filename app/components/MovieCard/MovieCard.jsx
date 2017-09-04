@@ -4,12 +4,13 @@ const MovieCard = ({
   movie,
   addFavorite,
   user,
-  removeFave,
   favorites,
-  getAllFavorites
+  getAllFavorites,
+  removeFavorite
 }) => {
   const { title, overview, backdrop_path, poster_path } = movie;
   const photo = backdrop_path ? backdrop_path : poster_path;
+  let favoriteTitles;
 
   return (
     <div
@@ -17,9 +18,17 @@ const MovieCard = ({
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${photo})`
       }}
-      onClick={() => {
-        const fart = favorites.map(film => film.title);
-        if (!fart.includes(title)) {
+      onClick={e => {
+        user.id
+          ? e.currentTarget.classList.toggle("movie-card-selected")
+          : null;
+
+        favoriteTitles = favorites.map(film => film.title);
+        if (!user.id) {
+          alert("Please log in to favorite a movie");
+        }
+        if (!favoriteTitles.includes(title) && user.id) {
+          console.log("adding favorites");
           addFavorite({
             movie_id: movie.id,
             title: movie.title,
@@ -29,6 +38,10 @@ const MovieCard = ({
             vote_average: movie.vote_average,
             overview: movie.overview
           });
+          getAllFavorites(user.id);
+        } else if (favoriteTitles.includes(title) && user.id) {
+          console.log("removing favorites");
+          removeFavorite(user.id, movie.movie_id);
           getAllFavorites(user.id);
         }
       }

@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { postNewUser, signIn } from "../../actions/actions";
+
+import { postNewUser, signIn, setFavorites } from "../../actions/actions";
+
 import Register from "./Register.jsx";
 import { bindActionCreators } from "redux";
 
@@ -10,7 +12,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
-    { handleSubmit: postNewUser, signIn: signIn },
+    { handleSubmit: postNewUser, signIn: signIn, resetFavorites: setFavorites },
     dispatch
   );
 };

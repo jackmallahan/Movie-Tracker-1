@@ -12,7 +12,11 @@ export default class MovieIndex extends Component {
       `https://api.themoviedb.org/3/movie/now_playing?api_key=${key}&language=en-US&page=1`
     );
 
-    let loadedUser = JSON.parse(localStorage.getItem("currentUser"));
+    let loadedUser;
+
+    localStorage.getItem("currentUser") !== "undefined" || null
+      ? (loadedUser = JSON.parse(localStorage.getItem("currentUser")))
+      : console.log("no stored user");
 
     loadedUser
       ? this.props.login(loadedUser)
