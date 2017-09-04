@@ -22,11 +22,7 @@ export default class MovieIndex extends Component {
       this.props.login(loadedUser);
       return this.props.getAllFavorites(loadedUser.id);
     }
-    // loadedUser
-    //   ? this.props.login(loadedUser)
-    //   : console.log("local storage empty");
 
-    // this.props.getAllFavorites(loadedUser.id);
     if (this.props.currentUser.id) {
       localStorage.setItem(
         "currentUser",
@@ -42,10 +38,6 @@ export default class MovieIndex extends Component {
       );
     });
 
-    return (
-      <div className="movie-list">
-        {mappedMovies}
-      </div>
-    );
+    return <div className="movie-list">{mappedMovies}</div>;
   }
 }

@@ -16,9 +16,11 @@ const MovieCard = ({
   return (
     <div
       className={
-        favoriteTitles.includes(title)
-          ? "movie-card movie-card-selected"
-          : "movie-card"
+        favoriteTitles.includes(title) ? (
+          "movie-card movie-card-selected"
+        ) : (
+          "movie-card"
+        )
       }
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${photo})`
@@ -36,10 +38,6 @@ const MovieCard = ({
           ? e.currentTarget.classList.toggle("movie-card-selected")
           : alert("Please log in to favorite a movie");
 
-        {
-          /*favoriteTitles = favorites.map(film => film.title);*/
-        }
-        
         if (!favoriteTitles.includes(title) && user.id) {
           addFavorite({
             movie_id: movie.id,
