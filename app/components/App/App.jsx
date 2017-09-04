@@ -11,13 +11,6 @@ export default class App extends Component {
 		super(props)
 	}
 
-	// componentDidMount() {
-	// 	if (localStorage.length) {
-	// 		let user = JSON.parse(localStorage.getItem('currentUser'))
-	// 		this.props.getFromLocal(user)
-	// 	}
-	// }
-
 	render() {
 		return (
 			<div className="app-container">
