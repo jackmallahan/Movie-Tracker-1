@@ -27,7 +27,6 @@ const MovieCard = ({
         let card = e.currentTarget.classList;
 
         if (inFavorites === true && card[1]) {
-          console.log("removing first");
           removeFavorite(user.id, movie.movie_id);
           return getAllFavorites(user.id);
         }
@@ -36,10 +35,6 @@ const MovieCard = ({
           ? e.currentTarget.classList.toggle("movie-card-selected")
           : alert("Please log in to favorite a movie");
 
-        {
-          /*favoriteTitles = favorites.map(film => film.title);*/
-        }
-        
         if (!favoriteTitles.includes(title) && user.id) {
           addFavorite({
             movie_id: movie.id,
@@ -52,14 +47,17 @@ const MovieCard = ({
           });
           getAllFavorites(user.id);
         } else if (!card[1] && inFavorites === false && user.id) {
-          console.log("removing again");
           removeFavorite(user.id, movie.id);
           getAllFavorites(user.id);
         }
       }}
     >
-      <h3>{title}</h3>
-      <p>{overview}</p>
+      <h3>
+        {title}
+      </h3>
+      <p>
+        {overview}
+      </p>
     </div>
   );
 };
