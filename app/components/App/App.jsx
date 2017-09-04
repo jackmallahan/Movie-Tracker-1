@@ -27,15 +27,17 @@ export default class App extends Component {
           <NavLink to="/favorites" className="favorites-link">
             Favorites
           </NavLink>
-          <p
-            className="logout"
-            onClick={() => {
-              localStorage.clear();
-              location.reload();
-            }}
-          >
-            Logout
-          </p>
+          {this.props.currentUser.id && (
+            <p
+              className="logout"
+              onClick={() => {
+                localStorage.clear();
+                location.reload();
+              }}
+            >
+              Logout
+            </p>
+          )}
         </header>
         <h1>Movie Tracker</h1>
         <Route exact path="/" component={MovieIndexContainer} />

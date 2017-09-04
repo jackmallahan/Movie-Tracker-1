@@ -1,27 +1,36 @@
 .movie-card {
+  background-repeat: no-repeat;
+  background-size: cover;
   border: 2px solid #8bd3e6;
   border-radius: 15px;
   box-shadow: 2px 2px 25px #767676;
   color: white;
-  text-align: center;
-  margin: 10px;
+  font-family: "Cinzel", serif;
   height: 250px;
   width: 30vw;
-  opacity: 1;
-  background-size: cover;
-  background-repeat: no-repeat;
+  margin: 10px;
+  opacity: 0.8;
+  overflow: scroll;
+  text-align: center;
+  transition: 0.5s;
 }
 
 .movie-card p {
   display: none;
+  font-size: 1.2em;
+  height: auto;
+  margin: 0px;
+  padding: 30px;
 }
 
 .movie-card:hover {
-  opacity: 0.5;
+  opacity: 1;
   cursor: pointer;
+  transform: scale(1.05);
 }
 
 .movie-card:hover p {
+  background-color: rgba(72, 72, 72, 0.6);
   display: block;
 }
 
