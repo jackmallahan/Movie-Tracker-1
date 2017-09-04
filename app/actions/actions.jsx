@@ -1,12 +1,5 @@
-// export const getUsers = users => {
-//   return {
-//     type: "GET_USERS",
-//     users
-//   };
-// };
 
 export const saveData = data => {
-  console.log("in actions saveData", data);
   return {
     type: "SAVE_DATA",
     data: data
