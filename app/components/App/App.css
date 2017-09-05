@@ -1,10 +1,21 @@
 body {
+  font-family: "Cinzel", serif;
   margin: 0;
 }
 
 header {
-  background-color: orange;
+  background-color: #ffa500;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 5px;
+  height: 80px;
+  width: 100%;
+}
+
+.name-logout {
   display: flex;
+  width: 100px;
 }
 
 .login-link,
@@ -12,13 +23,21 @@ header {
 .register-link,
 .favorites-link,
 .logout {
-  margin: 10px;
+  background-color: #8bd3e6;
+  border: 1px solid #f1563f;
+  border-radius: 15px;
+  color: black;
+  height: 25px;
+  width: 80px;
+  margin: 15px 0px 0px 30px;
+  padding: 5px 20px;
+  padding-top: 8px;
+  text-align: center;
+  text-decoration: none;
 }
 
-.logout {
-  color: #551a8b;
-  margin-right: 0;
-  text-decoration: underline;
+.login-link {
+  margin-left: 40px;
 }
 
 .login-link:hover,
@@ -26,10 +45,25 @@ header {
 .register-link:hover,
 .favorites-link:hover,
 .logout:hover {
+  background-color: #f1563f;
   color: white;
   cursor: pointer;
 }
 
-.active {
-  color: red;
+.login-link:focus,
+.movies-link:focus,
+.register-link:focus,
+.favorites-link:focus,
+.logout:focus {
+  background-color: #f1563f;
+  color: white;
+  cursor: pointer;
+}
+
+.user-name {
+  margin: 25px;
+}
+
+h1 {
+  text-align: center;
 }
