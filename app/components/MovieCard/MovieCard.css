@@ -19,7 +19,7 @@
 	font-size: 1.2em;
 	height: auto;
 	margin: 0px;
-	padding: 30px;
+	padding: 10px;
 }
 
 .movie-card:hover {
@@ -40,9 +40,20 @@
 h3 {
 	background-color: #3c6e71;
 	color: #d9d9d9;
-	font-size: 32px;
+	font-size: 2em;
+	padding: 0 5px;
 }
 
 h1 {
 	color: #f1563f;
+}
+
+@media (max-width: 720px) {
+	h3 {
+		font-size: 1.5em;
+	}
+
+	.movie-card p {
+		font-size: 0.8em;
+	}
 }

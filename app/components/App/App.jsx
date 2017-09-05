@@ -16,15 +16,19 @@ export default class App extends Component {
 		return (
 			<div className="app-container">
 				<header className="page-header">
-					<NavLink to="/login" className="login-link">
-						Login
-					</NavLink>
+					{!this.props.currentUser.id && (
+						<NavLink to="/login" className="login-link">
+							Login
+						</NavLink>
+					)}
 					<NavLink to="/" className="movies-link">
 						Movies
 					</NavLink>
-					<NavLink to="/register" className="register-link">
-						Register
-					</NavLink>
+					{!this.props.currentUser.id && (
+						<NavLink to="/register" className="register-link">
+							Register
+						</NavLink>
+					)}
 					{this.props.currentUser.id && (
 						<NavLink to="/favorites" className="favorites-link">
 							Favorites
