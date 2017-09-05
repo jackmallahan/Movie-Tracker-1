@@ -48,7 +48,7 @@ h1 {
 	color: #f1563f;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 800px) {
 	h3 {
 		font-size: 1.5em;
 	}
@@ -56,4 +56,13 @@ h1 {
 	.movie-card p {
 		font-size: 0.8em;
 	}
+
+	.movie-card {
+		width: 95%;
+	}
 }
+
+/*@media (max-width: 500px) {
+	.movie-card {
+		width: 95%;
+}*/
