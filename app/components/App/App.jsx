@@ -25,14 +25,16 @@ export default class App extends Component {
           <NavLink to="/register" className="register-link">
             Register
           </NavLink>
-          <NavLink to="/favorites" className="favorites-link">
-            Favorites
-          </NavLink>
+          {this.props.currentUser.id &&
+            <NavLink to="/favorites" className="favorites-link">
+              Favorites
+            </NavLink>}
 
-
-          {this.props.currentUser.id && (
+          {this.props.currentUser.id &&
             <div className="name-logout">
-              <p className="user-name">{this.props.currentUser.name}</p>
+              <p className="user-name">
+                {this.props.currentUser.name}
+              </p>
               <p
                 className="logout"
                 onClick={() => {
@@ -42,9 +44,7 @@ export default class App extends Component {
               >
                 Logout
               </p>
-            </div>
-          )}
-
+            </div>}
         </header>
         <h1>Movie Tracker</h1>
         <Route exact path="/" component={MovieIndexContainer} />
