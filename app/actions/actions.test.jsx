@@ -1,6 +1,6 @@
 import * as action from "./actions";
 
-// describe("GET_USERS aciton test", () => {
+// describe("GET_USERS action test", () => {
 //   it("should add todo", () => {
 //     const email = "email@email.com";
 //     const password = "773mhd8JJoi49KM";
@@ -14,7 +14,7 @@ import * as action from "./actions";
 //   });
 // });
 
-describe("SAVE_DATA aciton test", () => {
+describe("SAVE_DATA action test", () => {
   it("should save data", () => {
     const data = {
       adult: false,
@@ -41,7 +41,7 @@ describe("SAVE_DATA aciton test", () => {
   });
 });
 
-describe("LOGIN aciton test", () => {
+describe("LOGIN action test", () => {
   it("should log user in", () => {
     const email = "email@email.com";
     const password = "773mhd8JJoi49KM";
@@ -55,7 +55,7 @@ describe("LOGIN aciton test", () => {
   });
 });
 
-describe("REGISTER aciton test", () => {
+describe("REGISTER action test", () => {
   it("should register user", () => {
     const userInfo = {
       name: "Theonius",
@@ -73,7 +73,7 @@ describe("REGISTER aciton test", () => {
   });
 });
 
-describe("ADD_FAVORITE aciton test", () => {
+describe("ADD_FAVORITE action test", () => {
   it("should add favorite", () => {
     const movie = {
       adult: false,
@@ -101,7 +101,7 @@ describe("ADD_FAVORITE aciton test", () => {
   });
 });
 
-describe("SET_FAVES aciton test", () => {
+describe("SET_FAVES action test", () => {
   it("should log user in", () => {
     const faves = {};
 
@@ -114,7 +114,7 @@ describe("SET_FAVES aciton test", () => {
   });
 });
 
-describe("GET_FROM_LOCAL aciton test", () => {
+describe("GET_FROM_LOCAL action test", () => {
   it("should get local storage", () => {
     const storedUser = {};
 
@@ -127,7 +127,7 @@ describe("GET_FROM_LOCAL aciton test", () => {
   });
 });
 
-describe("REMOVE_FAVE aciton test", () => {
+describe("REMOVE_FAVE action test", () => {
   it("should remove movie from favorites", () => {
     const faves = {};
 
