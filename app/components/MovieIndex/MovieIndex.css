@@ -2,7 +2,6 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-column-gap: 5px;
-	/*background-color: #53565a;*/
 	animation: fadeIn ease-in 1;
 	animation-duration: 0.75s;
 	animation-fill-mode: forwards;
@@ -38,4 +37,10 @@
 	to {
 		opacity: 1;
 	}
+}
+
+@media (max-width: 800px) {
+	.movie-list {
+		display: grid;
+		grid-template-column: repeat(2, 1fr)
 }
