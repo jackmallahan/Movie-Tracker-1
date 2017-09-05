@@ -1,5 +1,5 @@
 import React from 'react'
-import App from './App'
+import appContainer from './appContainer.js'
 import { shallow, mount, render } from 'enzyme'
 import fetchMock from 'fetch-mock'
 
@@ -12,6 +12,6 @@ describe('App', () => {
 	it('should render a div', () => {
 		wrapper = shallow(<appContainer />)
 
-		console.log(wrapper)
+		console.log(wrapper.find('div').length)
 	})
 })
