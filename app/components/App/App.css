@@ -1,21 +1,22 @@
 body {
-  font-family: "Cinzel", serif;
-  margin: 0;
+	font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+	margin: 0;
+	background-color: #d9d9d9;
 }
 
 header {
-  background-color: #ffa500;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 5px;
-  height: 80px;
-  width: 100%;
+	background-color: #3c6e71;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-column-gap: 5px;
+	height: 80px;
+	width: 100%;
 }
 
 .name-logout {
-  display: flex;
-  width: 100px;
+	display: flex;
+	width: 100px;
 }
 
 .login-link,
@@ -23,21 +24,22 @@ header {
 .register-link,
 .favorites-link,
 .logout {
-  background-color: #8bd3e6;
-  border: 1px solid #f1563f;
-  border-radius: 15px;
-  color: black;
-  height: 25px;
-  width: 80px;
-  margin: 15px 0px 0px 30px;
-  padding: 5px 20px;
-  padding-top: 8px;
-  text-align: center;
-  text-decoration: none;
+	font-family: 'Cinzel', serif;
+	background-color: #353535;
+	border: 1px solid #d9d9d9;
+	border-radius: 15px;
+	color: white;
+	height: 25px;
+	width: 80px;
+	margin: 15px 0px 0px 30px;
+	padding: 5px 20px;
+	padding-top: 8px;
+	text-align: center;
+	text-decoration: none;
 }
 
 .login-link {
-  margin-left: 40px;
+	margin-left: 40px;
 }
 
 .login-link:hover,
@@ -45,9 +47,9 @@ header {
 .register-link:hover,
 .favorites-link:hover,
 .logout:hover {
-  background-color: #f1563f;
-  color: white;
-  cursor: pointer;
+	background-color: #ff4743;
+	color: white;
+	cursor: pointer;
 }
 
 .login-link:focus,
@@ -55,15 +57,77 @@ header {
 .register-link:focus,
 .favorites-link:focus,
 .logout:focus {
-  background-color: #f1563f;
-  color: white;
-  cursor: pointer;
+	background-color: #ff4743;
+	color: white;
+	cursor: pointer;
 }
 
 .user-name {
-  margin: 25px;
+	color: #d9d9d9;
+	font-size: 1em;
+	width: 100px;
 }
 
 h1 {
-  text-align: center;
+	color: black;
+	text-align: center;
+	overflow: hidden;
+	border-right: 0.15em solid #3c6e71;
+	white-space: nowrap;
+	margin: 15px auto;
+	width: 38%;
+	font-size: 3.5em;
+	letter-spacing: 0.15em;
+	animation: typing 3.3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 38%;
+	}
+}
+
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: #3c6e71;
+	}
+}
+
+@media (max-width: 1500px) {
+	h1 {
+		width: 60%;
+	}
+
+  @keyframes typing {
+  	from {
+  		width: 0;
+  	}
+    
+  	to {
+  		width: 60%;
+  	}
+  }
+
+
+
+@media (max-width: 1000px) {
+	h1 {
+		width: 80%;
+	}
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 80%;
+    }
+  }
 }
