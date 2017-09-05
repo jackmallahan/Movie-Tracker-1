@@ -63,8 +63,18 @@
   }
 }
 
+@media (max-width: 800px) {
+	.faves-list {
+		grid-template-columns: repeat(2, .5fr)
+}
+
 @media (max-width: 525px) {
   .sweet-action {
     width: 100%;
   }
+}
+
+@media (max-width: 500px) {
+	.faves-list {
+		grid-template-columns: repeat(1, 1fr)
 }
