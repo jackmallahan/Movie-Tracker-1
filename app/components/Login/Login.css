@@ -1,4 +1,4 @@
-.register-div {
+.login-div {
   background-color: #53565a;
   color: white;
   display: grid;
@@ -7,27 +7,21 @@
   text-align: center;
 }
 
-.register-header {
+.login-header {
   grid-column-start: 2;
   font-size: 2em;
 }
 
-.register-div form {
+.login-div form {
+  animation: 1s slidein;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   grid-column-start: 2;
   grid-row-start: 2;
 }
 
-.name-input,
-.email-input,
-.password-input,
-.register-button {
-  animation: 1s slidein;
-}
-
-.register-div input {
+.login-div input {
   border-radius: 3px;
   border: none;
   font-size: 1.3em;
@@ -44,17 +38,17 @@
   }
 }
 
-.register-button {
+.login-button {
   background-color: orange;
 }
 
-.register-button:disabled {
+.login-button:disabled {
   background-color: gray;
   color: white;
 }
-.register-button:disabled:hover {
+.login-button:disabled:hover {
   cursor: default;
 }
-.register-button:hover {
+.login-button:hover {
   cursor: pointer;
 }

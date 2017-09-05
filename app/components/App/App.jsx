@@ -27,7 +27,7 @@ export default class App extends Component {
           <NavLink to="/favorites" className="favorites-link">
             Favorites
           </NavLink>
-          {this.props.currentUser.id && (
+          {this.props.currentUser.id &&
             <p
               className="logout"
               onClick={() => {
@@ -36,8 +36,7 @@ export default class App extends Component {
               }}
             >
               Logout
-            </p>
-          )}
+            </p>}
         </header>
         <h1>Movie Tracker</h1>
         <Route exact path="/" component={MovieIndexContainer} />

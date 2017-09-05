@@ -25,6 +25,7 @@ class Register extends Component {
 
     return (
       <div className="register-div">
+        <h2 className="register-header">Create a new account</h2>
         <form
           onSubmit={e => {
             e.preventDefault();
@@ -67,6 +68,7 @@ class Register extends Component {
             onChange={e => this.handleInput("password", e.target.value)}
           />
           <input
+            className="register-button"
             type="submit"
             disabled={
               !this.state.name || !this.state.email || !this.state.password
