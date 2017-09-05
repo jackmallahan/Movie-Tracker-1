@@ -45,7 +45,7 @@ export default class App extends Component {
               </p>
             </div>}
           <p className="user-name">
-            User: {this.props.currentUser.name}
+            User: {this.props.currentUser.name || "none"}
           </p>
         </header>
         <h1>movie tracker.</h1>
