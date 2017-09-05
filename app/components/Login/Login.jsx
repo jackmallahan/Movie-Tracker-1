@@ -27,6 +27,7 @@ class Login extends Component {
 
     return (
       <div className="login-div">
+        <h2 className="login-header">Log in to an existing account</h2>
         <form
           onSubmit={e => {
             e.preventDefault();
@@ -53,7 +54,11 @@ class Login extends Component {
             onChange={e => this.handleInput("password", e.target.value)}
           />
 
-          <input type="submit" />
+          <input
+            className="login-button"
+            type="submit"
+            disabled={!this.state.email || !this.state.password ? true : false}
+          />
         </form>
       </div>
     );
