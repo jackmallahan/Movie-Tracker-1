@@ -67,8 +67,11 @@ body {
 .user-name {
   color: #d9d9d9;
   font-size: 1em;
-  text-align: center;
-  width: 100px;
+  height: 30px;
+  margin: auto;
+  margin-right: -60%;
+  text-align: right;
+  width: 100%;
 }
 
 h1 {
@@ -135,19 +138,49 @@ h1 {
 }
 
 @media (max-width: 720px) {
+  /*.user-name {
+    margin-left: -60px;
+    margin-right: none;
+  }*/
+
   h1 {
     font-size: 2.5em;
   }
-}
 
-@media (max-width: 525px) {
+@media (max-width: 550px) {
   h1 {
     font-size: 2em;
   }
+
+  .user-name {
+    margin-left: -5px;
+  }
+
 }
 
 @media (max-width: 525px) {
+
+  .login-link,
+  .movies-link,
+  .register-link,
+  .favorites-link {
+    width: 150px;
+  }
+
+.user-name {
+  display: none;
+}
+
   h1 {
     font-size: 1.7em;
+  }
+}
+
+@media (max-width: 450px) {
+  .login-link,
+  .movies-link,
+  .register-link,
+  .favorites-link {
+    width: 100px;
   }
 }
