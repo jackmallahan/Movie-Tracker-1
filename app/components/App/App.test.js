@@ -5,13 +5,13 @@ import fetchMock from "fetch-mock";
 
 describe("App", () => {
   let wrapper;
-  it("should render", () => {
+  it.only("should render", () => {
     expect(true);
   });
 
   it("should render a div", () => {
     wrapper = shallow(<App />);
 
-    console.log(wrapper.debug);
+    console.log(wrapper);
   });
 });

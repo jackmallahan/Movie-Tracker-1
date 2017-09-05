@@ -1,21 +1,7 @@
 import * as action from "./actions";
 
-// describe("GET_USERS action test", () => {
-//   it("should add todo", () => {
-//     const email = "email@email.com";
-//     const password = "773mhd8JJoi49KM";
-
-//     const expectedAction = {
-//       type: "GET_USERS",
-//       email: "email@email.com",
-//       password: "773mhd8JJoi49KM"
-//     };
-//     expect(action.getUsers(email, password)).toEqual(expectedAction);
-//   });
-// });
-
 describe("SAVE_DATA action test", () => {
-  it("should save data", () => {
+  it.only("should save data", () => {
     const data = {
       adult: false,
       backdrop_path: "/o8u0NyEigCEaZHBdCYTRfXR8U4i.jpg",
@@ -26,37 +12,45 @@ describe("SAVE_DATA action test", () => {
       release_date: "2017-08-03",
       title: "Annabelle: Creation"
     };
+
     const expectedAction = {
-      type: "SAVE_DATA",
-      adult: false,
-      backdrop_path: "/o8u0NyEigCEaZHBdCYTRfXR8U4i.jpg",
-      id: 396422,
-      overview:
-        "Several years after the tragic death of their little girl, a dollmaker and his wife welcome a nun and several girls from a shuttered orphanage into their home, soon becoming the target of the dollmaker's possessed creation, Annabelle.",
-      poster_path: "/tb86j8jVCVsdZnzf8I6cIi65IeM.jpg",
-      release_date: "2017-08-03",
-      title: "Annabelle: Creation"
+      data: {
+        adult: false,
+        backdrop_path: "/o8u0NyEigCEaZHBdCYTRfXR8U4i.jpg",
+        id: 396422,
+        overview:
+          "Several years after the tragic death of their little girl, a dollmaker and his wife welcome a nun and several girls from a shuttered orphanage into their home, soon becoming the target of the dollmaker's possessed creation, Annabelle.",
+        poster_path: "/tb86j8jVCVsdZnzf8I6cIi65IeM.jpg",
+        release_date: "2017-08-03",
+        title: "Annabelle: Creation"
+      },
+      type: "SAVE_DATA"
     };
+
     expect(action.saveData(data)).toEqual(expectedAction);
   });
 });
 
 describe("LOGIN action test", () => {
-  it("should log user in", () => {
-    const email = "email@email.com";
-    const password = "773mhd8JJoi49KM";
+  it.only("should log user in", () => {
+    const userInfo = {
+      email: "email@email.com",
+      password: "fart"
+    };
 
     const expectedAction = {
-      type: "LOGIN",
-      email: "email@email.com",
-      password: "773mhd8JJoi49KM"
+      userInfo: {
+        email: "email@email.com",
+        password: "fart"
+      },
+      type: "LOGIN"
     };
     expect(action.login(userInfo)).toEqual(expectedAction);
   });
 });
 
 describe("REGISTER action test", () => {
-  it("should register user", () => {
+  it.only("should register user", () => {
     const userInfo = {
       name: "Theonius",
       email: "email@email.com",
@@ -64,17 +58,19 @@ describe("REGISTER action test", () => {
     };
 
     const expectedAction = {
-      type: "GET_USERS",
-      name: "Theonius",
-      email: "email@email.com",
-      password: "773mhd8JJoi49KM"
+      userInfo: {
+        name: "Theonius",
+        email: "email@email.com",
+        password: "773mhd8JJoi49KM"
+      },
+      type: "REGISTER"
     };
     expect(action.register(userInfo)).toEqual(expectedAction);
   });
 });
 
 describe("ADD_FAVORITE action test", () => {
-  it("should add favorite", () => {
+  it.only("should add favorite", () => {
     const movie = {
       adult: false,
       backdrop_path: "/o8u0NyEigCEaZHBdCYTRfXR8U4i.jpg",
@@ -87,55 +83,100 @@ describe("ADD_FAVORITE action test", () => {
     };
 
     const expectedAction = {
-      type: "ADD_FAVORITE",
-      adult: false,
-      backdrop_path: "/o8u0NyEigCEaZHBdCYTRfXR8U4i.jpg",
-      id: 396422,
-      overview:
-        "Several years after the tragic death of their little girl, a dollmaker and his wife welcome a nun and several girls from a shuttered orphanage into their home, soon becoming the target of the dollmaker's possessed creation, Annabelle.",
-      poster_path: "/tb86j8jVCVsdZnzf8I6cIi65IeM.jpg",
-      release_date: "2017-08-03",
-      title: "Annabelle: Creation"
+      movie: {
+        adult: false,
+        backdrop_path: "/o8u0NyEigCEaZHBdCYTRfXR8U4i.jpg",
+        id: 396422,
+        overview:
+          "Several years after the tragic death of their little girl, a dollmaker and his wife welcome a nun and several girls from a shuttered orphanage into their home, soon becoming the target of the dollmaker's possessed creation, Annabelle.",
+        poster_path: "/tb86j8jVCVsdZnzf8I6cIi65IeM.jpg",
+        release_date: "2017-08-03",
+        title: "Annabelle: Creation"
+      },
+      type: "ADD_FAVORITE"
     };
     expect(action.favorite(movie)).toEqual(expectedAction);
   });
 });
 
 describe("SET_FAVES action test", () => {
-  it("should log user in", () => {
-    const faves = {};
+  it.only("should set favorites", () => {
+    const faves = [
+      {
+        id: 475,
+        movie_id: 396422,
+        user_id: 51,
+        title: "Annabelle: Creation",
+        poster_path: "/tb86j8jVCVsdZnzf8I6cIi65IeM.jpg",
+        release_date: "2017-08-03",
+        vote_average: "6.5",
+        overview:
+          "Several years after the tragic death of their little girl, a dollmaker and his wife welcome a nun and several girls from a shuttered orphanage into their home, soon becoming the target of the dollmaker's possessed creation, Annabelle."
+      }
+    ];
 
     const expectedAction = {
       type: "SET_FAVES",
-      email: "email@email.com",
-      password: "773mhd8JJoi49KM"
+      faves: [
+        {
+          id: 475,
+          movie_id: 396422,
+          user_id: 51,
+          title: "Annabelle: Creation",
+          poster_path: "/tb86j8jVCVsdZnzf8I6cIi65IeM.jpg",
+          release_date: "2017-08-03",
+          vote_average: "6.5",
+          overview:
+            "Several years after the tragic death of their little girl, a dollmaker and his wife welcome a nun and several girls from a shuttered orphanage into their home, soon becoming the target of the dollmaker's possessed creation, Annabelle."
+        }
+      ]
     };
     expect(action.setFavorites(faves)).toEqual(expectedAction);
   });
 });
 
 describe("GET_FROM_LOCAL action test", () => {
-  it("should get local storage", () => {
-    const storedUser = {};
-
-    const expectedAction = {
-      type: "GET_FROM_LOCAL",
+  it.only("should get local storage", () => {
+    const storedUser = {
+      id: 23,
       email: "email@email.com",
       password: "773mhd8JJoi49KM"
+    };
+
+    const expectedAction = {
+      storedUser: {
+        id: 23,
+        email: "email@email.com",
+        password: "773mhd8JJoi49KM"
+      },
+      type: "GET_FROM_LOCAL"
     };
     expect(action.getFromLocal(storedUser)).toEqual(expectedAction);
   });
 });
 
 describe("REMOVE_FAVE action test", () => {
-  it("should remove movie from favorites", () => {
-    const faves = {};
-
+  it.only("should remove movie from favorites", () => {
+    const faves = [
+      {
+        id: 475,
+        movie_id: 396422,
+        user_id: 51,
+        title: "Annabelle: Creation",
+        poster_path: "/tb86j8jVCVsdZnzf8I6cIi65IeM.jpg",
+        release_date: "2017-08-03",
+        vote_average: "6.5",
+        overview:
+          "Several years after the tragic death of their little girl, a dollmaker and his wife welcome a nun and several girls from a shuttered orphanage into their home, soon becoming the target of the dollmaker's possessed creation, Annabelle."
+      }
+    ];
+    console.log(faves[0]);
     const expectedAction = {
-      type: "REMOVE_FAVE",
-      email: "email@email.com",
-      password: "773mhd8JJoi49KM"
+      type: "REMOVE_FAVORITE",
+      faveId: 475
     };
-    expect(action.removeFave(faves)).toEqual(expectedAction);
+    expect(action.removeFromFavorites("userId", faves[0].id)).toEqual(
+      expectedAction
+    );
   });
 });
