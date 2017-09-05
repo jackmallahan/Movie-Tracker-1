@@ -1,14 +1,14 @@
 @-webkit-keyframes blinker {
   from {
-    opacity: 1.0;
+    opacity: 1;
   }
   to {
-    opacity: 0.0;
+    opacity: 0;
   }
 }
 
 .sweet-action {
-  background-color: red;
+  background-color: #22889f;
   color: purple;
   font-size: 100px;
   height: 100vh;
@@ -17,8 +17,8 @@
   text-align: center;
   -webkit-animation-name: blinker;
   -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
-  -webkit-animation-duration: .25s;
+  -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 1);
+  -webkit-animation-duration: 0.8s;
 }
 
 .faves-list {
@@ -27,12 +27,12 @@
   grid-column-gap: 5px;
   background-color: #53565a;
   animation: fadeIn ease-in 1;
-  animation-duration: .75s;
+  animation-duration: 0.75s;
   animation-fill-mode: forwards;
   -moz-animation: fadeIn ease-in 1;
-  -moz-animation-duration: .75s;
+  -moz-animation-duration: 0.75s;
   -moz-animation-fill-mode: forwards;
-  -webkit-animation-duration: .75s;
+  -webkit-animation-duration: 0.75s;
   -webkit-animation-fill-mode: forwards;
 }
 
@@ -60,5 +60,11 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@media (max-width: 525px) {
+  .sweet-action {
+    width: 100%;
   }
 }

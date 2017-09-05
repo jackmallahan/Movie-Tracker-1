@@ -1,24 +1,25 @@
 body {
   display: grid;
   grid-template-rows: 100px 100px 1fr;
-	font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
-	margin: 0;
-	background-color: #d9d9d9;
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter",
+    "Lucida Typewriter", monospace;
+  margin: 0;
+  background-color: #d9d9d9;
 }
 
-header {
-	background-color: #3c6e71;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr;
-	grid-column-gap: 5px;
-	width: 100%;
+.page-header {
+  background-color: #3c6e71;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 5px;
+  width: 100%;
   height: 80px;
 }
 
 .name-logout {
-	display: flex;
-	width: 100px;
+  display: flex;
+  width: 200px;
 }
 
 .login-link,
@@ -26,22 +27,21 @@ header {
 .register-link,
 .favorites-link,
 .logout {
-	font-family: 'Cinzel', serif;
-	background-color: #353535;
-	border: 1px solid #d9d9d9;
-	border-radius: 15px;
-	color: white;
-	height: 25px;
-	width: 80px;
-	margin: 15px 0px 0px 30px;
-	padding: 5px 20px;
-	padding-top: 8px;
-	text-align: center;
-	text-decoration: none;
+  font-family: "Cinzel", serif;
+  background-color: #353535;
+  border: 1px solid #d9d9d9;
+  border-radius: 50px;
+  color: white;
+  height: 30px;
+  width: 100px;
+  margin: 20px 5px;
+  padding-top: 8px;
+  text-align: center;
+  text-decoration: none;
 }
 
 .login-link {
-	margin-left: 40px;
+  margin-left: 10px;
 }
 
 .login-link:hover,
@@ -49,9 +49,9 @@ header {
 .register-link:hover,
 .favorites-link:hover,
 .logout:hover {
-	background-color: #ff4743;
-	color: white;
-	cursor: pointer;
+  background-color: #ff4743;
+  color: white;
+  cursor: pointer;
 }
 
 .login-link:focus,
@@ -59,81 +59,95 @@ header {
 .register-link:focus,
 .favorites-link:focus,
 .logout:focus {
-	background-color: #ff4743;
-	color: white;
-	cursor: pointer;
+  background-color: #ff4743;
+  color: white;
+  cursor: pointer;
 }
 
 .user-name {
-	color: #d9d9d9;
-	font-size: 1em;
-	width: 100px;
+  color: #d9d9d9;
+  font-size: 1em;
+  text-align: center;
+  width: 100px;
 }
 
 h1 {
-	color: black;
-	text-align: center;
-	overflow: hidden;
-	border-right: 0.15em solid #3c6e71;
-	white-space: nowrap;
-	margin: 15px auto;
-	width: 38%;
-	font-size: 3.5em;
-	letter-spacing: 0.15em;
-	animation: typing 3.3s steps(40, end), blink-caret 0.75s step-end infinite;
+  color: black;
+  text-align: center;
+  overflow: hidden;
+  border-right: 0.15em solid #3c6e71;
+  white-space: nowrap;
+  margin: 15px auto;
+  width: 38%;
+  font-size: 3.5em;
+  letter-spacing: 0.15em;
+  animation: typing 3.3s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 @keyframes typing {
-	from {
-		width: 0;
-	}
-	to {
-		width: 38%;
-	}
+  from {
+    width: 0;
+  }
+  to {
+    width: 38%;
+  }
 }
 
 @keyframes blink-caret {
-	from,
-	to {
-		border-color: transparent;
-	}
-	50% {
-		border-color: #3c6e71;
-	}
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #3c6e71;
+  }
 }
 
 @media (max-width: 1500px) {
-	h1 {
-		width: 60%;
-	}
+  h1 {
+    width: 60%;
+  }
 
-	@keyframes typing {
-		from {
-			width: 0;
-		}
-
-		to {
-			width: 60%;
-		}
-	}
-
-	@media (max-width: 1000px) {
-		h1 {
-			width: 80%;
-		}
-
-		@keyframes typing {
-			from {
-				width: 0;
-			}
-			to {
-				width: 80%;
-			}
-		}
-	}
-
-	@media (max-width: 720px) {
-		h1 {
-			font-size: 2.5em;
+  @keyframes typing {
+    from {
+      width: 0;
     }
+
+    to {
+      width: 60%;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  h1 {
+    width: 80%;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  h1 {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 525px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 525px) {
+  h1 {
+    font-size: 1.7em;
+  }
 }
