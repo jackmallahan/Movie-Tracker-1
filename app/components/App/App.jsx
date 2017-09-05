@@ -16,30 +16,24 @@ export default class App extends Component {
     return (
       <div className="app-container">
         <header className="page-header">
-          {!this.props.currentUser.id && (
+          {!this.props.currentUser.id &&
             <NavLink to="/login" className="login-link">
               Login
-            </NavLink>
-          )}
+            </NavLink>}
           <NavLink to="/" className="movies-link">
             Movies
           </NavLink>
-          {!this.props.currentUser.id && (
+          {!this.props.currentUser.id &&
             <NavLink to="/register" className="register-link">
               Register
-            </NavLink>
-          )}
-          {this.props.currentUser.id && (
+            </NavLink>}
+          {this.props.currentUser.id &&
             <NavLink to="/favorites" className="favorites-link">
               Favorites
-            </NavLink>
-          )}
+            </NavLink>}
 
-          {this.props.currentUser.id && (
+          {this.props.currentUser.id &&
             <div className="name-logout">
-              <p className="user-name">
-                Logged In As: {this.props.currentUser.name}
-              </p>
               <p
                 className="logout"
                 onClick={() => {
@@ -49,8 +43,10 @@ export default class App extends Component {
               >
                 Logout
               </p>
-            </div>
-          )}
+            </div>}
+          <p className="user-name">
+            User: {this.props.currentUser.name}
+          </p>
         </header>
         <h1>movie tracker.</h1>
         <Route exact path="/" component={MovieIndexContainer} />
