@@ -12,7 +12,6 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.props.currentUser);
     return (
       <div className="app-container">
         <header className="page-header">

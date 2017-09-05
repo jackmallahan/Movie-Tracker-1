@@ -220,7 +220,6 @@ describe('Actions', () => {
 				userInfo: { name: 'Jack', email: 'simplejack@aol.com', password: 'hi', id: 1 },
 				type: 'REGISTER'
 			}
-			console.log(action.postNewUser(mockData))
 			expect(action.register(action.postNewUser(mockData))).toEqual(response)
 		})
 	})
