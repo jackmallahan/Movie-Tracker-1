@@ -8,10 +8,4 @@ describe('App', () => {
 	it('true should equal true', () => {
 		expect(true)
 	})
-
-	it('should render a div', () => {
-		wrapper = shallow(<appContainer />)
-
-		console.log(wrapper.find('div').length)
-	})
 })

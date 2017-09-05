@@ -68,7 +68,6 @@ export const getAllFavorites = userId => {
 		fetch(`/api/users/${userId}/favorites`)
 			.then(data => data.json())
 			.then(data => dispatch(setFavorites(data.data)))
-			.catch(err => console.log(err))
 	}
 }
 
@@ -90,7 +89,7 @@ export const signIn = user => {
 			}
 		})
 			.then(data => {
-				return data.ok ? data.json() : alert('ya dun fuckd up')
+				return data.ok ? data.json() : alert('Email and Password are not correct')
 			})
 			.then(data => {
 				return dispatch(login(data.data))
@@ -113,7 +112,6 @@ export const postNewUser = user => {
 			.then(parsedData => {
 				dispatch(register(parsedData))
 			})
-			.catch(err => console.log('in catch ', err))
 	}
 }
 
@@ -126,10 +124,7 @@ export const removeFavorite = (userId, faveId) => {
 				'Content-Type': 'application/json'
 			}
 		})
-			.then(data => {
-				data.json()
-				console.log('fetch data', data)
-			})
+			.then(data => data.json())
 			.then(data => {
 				dispatch(removeFromFavorites(faveId))
 			})
